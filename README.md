@@ -1,2 +1,10 @@
 # IMY-220---Project
-Semester Project
+
+### To do:
+
+Splash Page
+Home Page
+Profile Page
+Post Page
+
+### Completed:
