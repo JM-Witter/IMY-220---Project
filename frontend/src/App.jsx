@@ -5,16 +5,15 @@ import {
 } from "react-router-dom";
 
 import Splash from "./pages/Splash";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-
-import Navigation from "./components/Navigation";
 
 function App() {
     return <BrowserRouter>
-        <Navigation />
 
         <Routes>
             <Route path="/" element={<Splash />} />
+            <Route path="/Home" element={<Home />} />
 
             <Route path="*" element={<NotFound />} />
         </Routes>

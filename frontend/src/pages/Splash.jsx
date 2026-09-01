@@ -1,7 +1,16 @@
 function Splash() {
     return <div>
         <h1>TidBit</h1>
-        <p>Welcome to the TidBit - A Social Media for sharing photos</p>
+
+        <label>Username</label>
+        <input type="text"></input> <br></br>
+        <label>Password</label>
+        <input type="text"></input> <br></br>
+
+        <br></br>
+        <button>Login</button> 
+        <button>Create Account</button>
+
     </div>
 }
 
