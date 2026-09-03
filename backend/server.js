@@ -19,7 +19,7 @@ app.post("/login", (req, res) => {
             });
         }
 
-        console.log(username, " ", password);
+        // console.log(username, " ", password);
         if (username == "bob" && password == "pass123") {
             console.log("Loggin in");
 
@@ -31,6 +31,39 @@ app.post("/login", (req, res) => {
 
             return res.status(401).json({
                 error: "Invalid login details"
+            });
+        }
+    } catch (error) {
+        return res.status(500).json({
+            error: "Failed to login",
+            details: error.message
+        });
+    }
+});
+
+
+app.post("/signup", (req, res) => {
+    try {
+        const { username, password } = req.body;
+
+        if (!username || !password) {
+            return res.status(400).json({ 
+                error: "Both username and password is required" 
+            });
+        }
+
+        // console.log(username, " ", password);
+        if (username != "bob" && password != "pass123") {
+            console.log("Signing up user");
+
+            return res.status(201).json({
+                message: "Created user"
+            });
+        } else {
+            console.log("User already exists");
+
+            return res.status(409).json({
+                error: "User already exists"
             });
         }
     } catch (error) {

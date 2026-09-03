@@ -1,30 +1,54 @@
+import Navigation from "../components/Navigation";
+import Post from "../components/Post";
+
 import tree from '../assets/tree.jpg';
+import elephant from '../assets/elephant.jpg';
+import giraffe from '../assets/giraffe.jpg';
 
 function Home() {
-    return <div>
-        <h2>TidBit</h2>
+  return (
+    <>
+      <Navigation searchbar={true} />
 
-        <input type="text" placeholder="Search"></input>
-
-        <div>
-            <button>Global</button>
-            <button>Popularity (High - Low)</button>
-            <button>Date (New - Old)</button>
-            <button>Type (Post)</button>
+      <main>
+        <div className="filters">
+          <button className="filter-btn active"><strong>Global</strong></button>
+          <button className="filter-btn"><strong>Popularity</strong> (High - Low)</button>
+          <button className="filter-btn"><strong>Date</strong> (New - Old)</button>
+          <button className="filter-btn"><strong>Type</strong> (Post)</button>
         </div>
 
-        {/* Posts components */}
-        <div>
-            <h3>Title</h3>
-            <a>Posted by user</a> <br></br>
+        <div className="post-list">
+          <Post
+            title="Tree"
+            author="BobTheTomato"
+            img={tree}
+            alt="Image of tree"
+            likes={12}
+            comments={4}
+          />
 
-            <img src={tree} alt="Image of tree" style={{ maxWidth: '200px', maxHeight: '200px' }} />
-            <br></br>
+          <Post
+            title="Picture of a Elephant"
+            author="NatureLover"
+            img={elephant}
+            alt="Image of a elephant"
+            likes={34}
+            comments={13}
+          />
 
-            <a>N likes </a>
-            <a>N comments</a>
+          <Post
+            title="Tall boy"
+            author="AverageJoe"
+            img={giraffe}
+            alt="Image of a giraffe"
+            likes={29}
+            comments={6}
+          />
         </div>
-    </div>
+      </main>
+    </>
+  );
 }
 
 export default Home;

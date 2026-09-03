@@ -6,6 +6,9 @@ import {
 
 import Splash from "./pages/Splash";
 import Home from "./pages/Home";
+import Posts from "./pages/Posts";
+import Profile from "./pages/Profile";
+
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -14,6 +17,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/Home" element={<Home />} />
+            <Route path="/Profile" element={<Profile />} />
+
+            <Route path="/Posts/:id" element={<Posts />} />
 
             <Route path="*" element={<NotFound />} />
         </Routes>
