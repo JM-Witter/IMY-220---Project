@@ -6,7 +6,7 @@ import {
 
 import Splash from "./pages/Splash";
 import Home from "./pages/Home";
-import Posts from "./pages/Posts";
+import Post from "./pages/Post";
 import Profile from "./pages/Profile";
 
 import NotFound from "./pages/NotFound";
@@ -17,9 +17,10 @@ function App() {
         <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/Home" element={<Home />} />
-            <Route path="/Profile" element={<Profile />} />
+            <Route path="/Account" element={<Profile />} />
 
-            <Route path="/Posts/:id" element={<Posts />} />
+            <Route path="/Profile/:id" element={<Profile />} />
+            <Route path="/Post/:id" element={<Post />} />
 
             <Route path="*" element={<NotFound />} />
         </Routes>

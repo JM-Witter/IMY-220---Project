@@ -1,13 +1,15 @@
 :root {
   --bg-dark: #181a24;
   --nav-dark: #0d0e13;
-
   --bg-mid: #232736;
+
   --input-bg: #1c202e;
   --button-bg: #323b54;
+  --border-color: #2e3547;
+
   --text-main: #ffffff;
   --text-faded: #8e95a5;
-  --border-color: #2e3547;
+  --text-error: #B13232;
 }
 
 body {
@@ -251,6 +253,10 @@ nav a {
 
   object-fit: contain;
   display: block;
+}
+
+.img-error p {
+  color: var(--text-error);
 }
 
 .post-stats {

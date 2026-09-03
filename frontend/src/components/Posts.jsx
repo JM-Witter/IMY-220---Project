@@ -1,6 +1,6 @@
-import React from 'react';
+import Image from "./Image"
 
-const Post = ({ title, author, img, alt, likes, comments }) => {
+const Posts = ({ title, author, img, alt, likes, comments }) => {
     return (
         <div className="post">
             <h3>{title}</h3>
@@ -9,9 +9,7 @@ const Post = ({ title, author, img, alt, likes, comments }) => {
                 - Posted by {author}
             </a>
 
-            {img && (<div className="post-image">
-                <img src={img} alt={alt} />
-            </div>)}
+            <Image img={img} alt={alt}/>
 
             <div className="post-stats">
                 <a>{likes} Likes</a>
@@ -21,4 +19,4 @@ const Post = ({ title, author, img, alt, likes, comments }) => {
     );
 };
 
-export default Post;
+export default Posts;

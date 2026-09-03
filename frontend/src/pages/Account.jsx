@@ -1,9 +1,9 @@
 import Navigation from "../components/Navigation";
 
-function Posts() {
+function Account() {
   return (
     <>
-      <Navigation serachbar={true}/>
+      <Navigation />
       
       <main>
           <p>Under construction</p>
@@ -12,4 +12,4 @@ function Posts() {
   );
 }
 
-export default Posts;
+export default Account;

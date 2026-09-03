@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 function Navigation({searchbar = false}) {
   return (
@@ -7,13 +8,11 @@ function Navigation({searchbar = false}) {
         <Link to="/Home">TidBit</Link>
       </div>
 
-      {searchbar && (<div className="search-bar">
-        <input type="text" placeholder="Search..." />
-      </div>)}
+      <SearchBar visible={searchbar} />
 
       <div className="nav-links">
         <Link to="/" className="nav-link">Login</Link>
-        <Link to="/Profile" className="nav-link">Profile</Link>
+        <Link to="/Account" className="nav-link">Account</Link>
       </div>
     </nav>
   );
