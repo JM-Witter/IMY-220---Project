@@ -272,7 +272,7 @@ nav a {
   font-size: 13px;
 }
 
-.post-stats a {
+.post-stats span {
   color: var(--text-faded);
   text-decoration: none;
 }
