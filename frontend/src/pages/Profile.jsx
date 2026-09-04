@@ -1,6 +1,6 @@
-import Navigation from "../components/Navigation";
-
 import { useParams } from "react-router-dom";
+
+import Navigation from "../components/Navigation";
 
 function Profile() {
   const params = useParams();
@@ -14,6 +14,10 @@ function Profile() {
       <main>
           <h1>Profile</h1>
           <p>UserID: {params.id}</p>
+
+
+          <p>Posts ...</p>
+          <p>Friends ...</p>
       </main>
     </>
   );

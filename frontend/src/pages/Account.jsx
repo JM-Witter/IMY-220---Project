@@ -6,8 +6,17 @@ function Account() {
       <Navigation />
 
       <main>
+        <h1>Profile</h1>
+        <p>Display Name</p>
+        <p>Profile Photo</p>
+        <p>About Me</p>
+        <p>Socials</p>
+
         <h1>Account</h1>
-        <p>Under construction</p>
+        <p>Email Address</p>
+        <p>Gender</p>
+        <br></br>
+        <p>Delete Account</p>
       </main>
     </>
   );
