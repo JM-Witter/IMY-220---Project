@@ -5,12 +5,13 @@ function SignUp() {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPass, setConfirmPass] = useState('');
     const [email, setEmail] = useState('');
 
     const nav = useNavigate();
 
     const signup = async () => {
-        if (username.trim() == "" || password.trim() == "" || email.trim() == "") {
+        if (username.trim() == "" || password.trim() == "" || confirmPass.trim() == "" || email.trim() == "") {
             return;
         }
 
@@ -25,6 +26,11 @@ function SignUp() {
 
         if (password.length < 6) {
             console.log("Password is too short");
+            return;
+        }
+
+        if (confirmPass != password) {
+            console.log("Passwords mismatch")
             return;
         }
 
@@ -75,6 +81,16 @@ function SignUp() {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className="input-group">
+                    <input
+                        type="password"
+                        placeholder="Re-enter Password"
+                        value={confirmPass}
+                        onChange={(e) => setConfirmPass(e.target.value)}
                         required
                     />
                 </div>
