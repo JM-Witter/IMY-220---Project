@@ -1,21 +1,25 @@
+import { Link } from "react-router-dom";
+
 import Image from "./Image"
 
-const Posts = ({ title, author, img, alt, likes, comments }) => {
+const Posts = ({ id, title, author, img, alt, likes, comments }) => {
     return (
-        <div className="post">
-            <h3>{title}</h3>
+        <Link to={`/Post/${id}`} className="post-link">
+            <div className="post">
+                <h3>{title}</h3>
 
-            <a className="post-author">
-                - Posted by {author}
-            </a>
+                <span className="post-author">
+                    - Posted by {author}
+                </span>
 
-            <Image img={img} alt={alt}/>
+                <Image img={img} alt={alt} />
 
-            <div className="post-stats">
-                <a>{likes} Likes</a>
-                <a>{comments} Comments</a>
+                <div className="post-stats">
+                    <span>{likes} Likes</span>
+                    <span>{comments} Comments</span>
+                </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

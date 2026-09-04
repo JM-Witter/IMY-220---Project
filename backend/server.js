@@ -1,7 +1,12 @@
 const express = require("express");
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
+
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 
 app.use(express.json());
 
@@ -15,7 +20,7 @@ app.post("/login", (req, res) => {
 
         if (!username || !password) {
             return res.status(400).json({ 
-                error: "Both username and password is required" 
+                error: "Both username and password is required"
             });
         }
 
@@ -24,7 +29,7 @@ app.post("/login", (req, res) => {
             console.log("Loggin in");
 
             return res.status(201).json({
-                message: "Logging in"
+                message: "Login"
             });
         } else {
             console.log("Incorrect login details");
@@ -35,8 +40,7 @@ app.post("/login", (req, res) => {
         }
     } catch (error) {
         return res.status(500).json({
-            error: "Failed to login",
-            details: error.message
+            error: "Failed to login"
         });
     }
 });
@@ -44,31 +48,30 @@ app.post("/login", (req, res) => {
 
 app.post("/signup", (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, email, password } = req.body;
 
-        if (!username || !password) {
+        if (!username || !email || !password) {
             return res.status(400).json({ 
-                error: "Both username and password is required" 
+                error: "Username, Email and Password is required"
             });
         }
 
-        // console.log(username, " ", password);
-        if (username != "bob" && password != "pass123") {
-            console.log("Signing up user");
+        if (username != "bob") {
+            console.log("Signing Up");
 
             return res.status(201).json({
-                message: "Created user"
+                message: "Created Account"
             });
         } else {
-            console.log("User already exists");
+            console.log("Username already exists");
 
             return res.status(409).json({
-                error: "User already exists"
+                error: "Username already exists"
             });
         }
     } catch (error) {
         return res.status(500).json({
-            error: "Failed to login",
+            error: "Failed to create account",
             details: error.message
         });
     }

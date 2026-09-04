@@ -4,9 +4,10 @@ function Account() {
   return (
     <>
       <Navigation />
-      
+
       <main>
-          <p>Under construction</p>
+        <h1>Account</h1>
+        <p>Under construction</p>
       </main>
     </>
   );

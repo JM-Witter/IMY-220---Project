@@ -93,8 +93,11 @@ main {
   border-radius: 25px;
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
+
   cursor: pointer;
   border: none;
+
   transition: background-color 0.2s ease;
 }
 
@@ -253,6 +256,10 @@ nav a {
 
   object-fit: contain;
   display: block;
+}
+
+.post-link {
+  text-decoration: none;
 }
 
 .img-error p {

@@ -7,6 +7,7 @@ function PostList({ posts }) {
             {posts.map((post) => (
                 <Posts
                     key={post.id}
+                    id={post.id}
                     title={post.title}
                     author={post.author}
                     img={post.img}
