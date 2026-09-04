@@ -8,7 +8,20 @@ function Login() {
     const nav = useNavigate();
 
     const login = async () => {
-        // console.log("Loggin in: ", username, password);
+        if (username.trim() == "" || password.trim() == "") {
+            return;
+        }
+
+        if (username.length < 3) {
+            console.log("Username is too short");
+            return;
+        }
+
+        if (password.length < 6) {
+            console.log("Password is too short");
+            return;
+        }
+
 
         try {
             const resp = await fetch("http://localhost:3000/login", {

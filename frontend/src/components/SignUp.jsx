@@ -10,6 +10,24 @@ function SignUp() {
     const nav = useNavigate();
 
     const signup = async () => {
+        if (username.trim() == "" || password.trim() == "" || email.trim() == "") {
+            return;
+        }
+
+        if (!email.includes("@")) {
+            return;
+        }
+
+        if (username.length < 3) {
+            console.log("Username is too short");
+            return;
+        }
+
+        if (password.length < 6) {
+            console.log("Password is too short");
+            return;
+        }
+
         try {
             const resp = await fetch("http://localhost:3000/signup", {
                 method: "POST",
